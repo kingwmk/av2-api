@@ -44,6 +44,8 @@ _STATIC_OBJECT_TYPES: Set[ObjectType] = {
     ObjectType.RIDERLESS_BICYCLE,
 }
 
+def get_dis(point_a, point_b):
+    return np.sqrt((point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2)
 
 def visualize_scenario(scenario: ArgoverseScenario, scenario_static_map: ArgoverseStaticMap, save_path: Path) -> None:
     """Build dynamic visualization for all tracks and the local map associated with an Argoverse scenario.
