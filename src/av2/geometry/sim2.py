@@ -17,7 +17,6 @@ from pathlib import Path
 from typing import Union
 
 import numpy as np
-from upath import UPath
 
 import av2.utils.io as io_utils
 from av2.utils.helpers import assert_np_array_shape
@@ -193,7 +192,7 @@ class Sim2:
         io_utils.save_json_dict(save_fpath, dict_for_serialization)
 
     @classmethod
-    def from_json(cls, json_fpath: Union[Path, UPath]) -> Sim2:
+    def from_json(cls, json_fpath) -> Sim2:
         """Generate class inst. from a JSON file containing Sim(2) parameters as flattened matrices (row-major)."""
         with json_fpath.open("r") as f:
             json_data = json.load(f)
