@@ -9,7 +9,6 @@ from typing import Any, Union  # noqa
 
 import numpy as np
 import numpy.typing as npt
-from upath import UPath
 
 NDArrayNumber = npt.NDArray["np.number[Any]"]
 NDArrayBool = npt.NDArray[np.bool_]
@@ -19,4 +18,3 @@ NDArrayByte = npt.NDArray[np.uint8]
 NDArrayInt = npt.NDArray[np.int64]
 NDArrayObject = npt.NDArray[np.object_]
 
-PathType = Union[Path, UPath]
