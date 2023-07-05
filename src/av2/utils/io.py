@@ -10,7 +10,6 @@ import cv2
 import numpy as np
 import pandas as pd
 from pyarrow import feather
-from upath import UPath
 
 import av2.geometry.geometry as geometry_utils
 from av2.geometry.se3 import SE3
@@ -24,7 +23,7 @@ SensorPosesMapping = Dict[str, SE3]
 
 
 def read_feather(
-    path: PathType, columns: Optional[Tuple[str, ...]] = None
+    path, columns: Optional[Tuple[str, ...]] = None
 ) -> pd.DataFrame:
     """Read Apache Feather data from a .feather file.
 
