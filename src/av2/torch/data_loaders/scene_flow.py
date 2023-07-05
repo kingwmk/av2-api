@@ -16,7 +16,6 @@ import av2._r as rust
 from av2.map.map_api import ArgoverseStaticMap
 from av2.torch.structures.flow import Flow
 from av2.torch.structures.sweep import Sweep
-from av2.utils.typing import PathType
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -34,7 +33,7 @@ class SceneFlowDataloader(Dataset[Tuple[Sweep, Sweep, Se3, Optional[Flow]]]):  #
         memory_mapped: Boolean flag indicating whether to memory map the dataframes.
     """
 
-    root_dir: PathType
+    root_dir
     dataset_name: str
     split_name: str
     num_accumulated_sweeps: int = 1
