@@ -13,7 +13,7 @@ from pyarrow import feather
 
 import av2.geometry.geometry as geometry_utils
 from av2.geometry.se3 import SE3
-from av2.utils.typing import NDArrayByte, NDArrayFloat, PathType
+from av2.utils.typing import NDArrayByte, NDArrayFloat
 
 # Mapping from egovehicle time in nanoseconds to egovehicle pose.
 TimestampedCitySE3EgoPoses = Dict[int, SE3]
@@ -126,7 +126,7 @@ def read_ego_SE3_sensor(log_dir: Path) -> SensorPosesMapping:
     return sensor_name_to_pose
 
 
-def read_city_SE3_ego(log_dir: Union[Path, UPath]) -> TimestampedCitySE3EgoPoses:
+def read_city_SE3_ego(log_dir) -> TimestampedCitySE3EgoPoses:
     """Read the egovehicle poses in the city reference frame.
 
     The egovehicle city pose defines an SE3 transformation from the egovehicle reference frame to the city ref. frame.
@@ -217,7 +217,7 @@ def write_img(img_path: Path, img: NDArrayByte, channel_order: str = "RGB") -> N
     cv2.imwrite(str(img_path), img)
 
 
-def read_json_file(fpath: Union[Path, UPath]) -> Dict[str, Any]:
+def read_json_file(fpath) -> Dict[str, Any]:
     """Load dictionary from JSON file.
 
     Args:
